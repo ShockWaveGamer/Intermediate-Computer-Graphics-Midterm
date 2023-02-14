@@ -11,7 +11,7 @@ A ship and background with "realistic" texture that presents a cartoon-style loo
 #B
 Windshield reflections to give realism to the ship. Explain which type of reflection you used, why, and how did you customized it.
 
-#A Explenation
+#A Code Explenation (Flow Chart Top Down)
 
 I needed color, 2 textures (one for the texture of the ship, and the other as a refrence for the toon ramp) and a range to set the intensity of the effect.
 
@@ -21,10 +21,18 @@ I return the rgb as the surface albedo, times the light color, times the ramp ab
 
 Then the actual color of the object is the main texture multiplied by the color of the object.
 
-#B Explenation
+#B Code Explenation (Flow Chart Top Down)
 
 For my properties I needed color, a range, my texture of the object, and a cubemap of the scenes skybox. 
 
 Inside my input I needed a world reflection vector.
 
 in the surf function the albedo of the object is the texture of the object, but the emmission is the cubemap, reffrencing the world reflection.
+
+#A Ramp Explenation
+
+My ramp was drawn to apear imperfect when reflecting the light, the patern horizontaly creates cartonish banding effect that adds interesting shading.
+
+#B Relfection Type Explenation
+
+I chose to use a cubemap reflection model because of ease of implementation. By creating a cube map we can have a detailed depuction of what the sky looks like from above, looking down at the ship. 
